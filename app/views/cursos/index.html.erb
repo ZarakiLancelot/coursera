@@ -1,0 +1,22 @@
+<h1>Búsqueda de Cursos por - <%= @termino_busqueda %></h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if @cursos %>
+            <% @cursos.each do |curso| %>
+                <tr class=<%= cycle('even', 'odd') %>>
+                    <td scope="row"><%= image_tag(curso["smallIcon"]) %></td>
+                    <td><%= curso["nombre"] %></td>
+                    <td><%= curso["shortDescription"] %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
